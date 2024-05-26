@@ -1,0 +1,850 @@
+<html>
+
+<!-- Mirrored from www.evastotz.com/works by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Apr 2024 10:28:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Works by Eva Stotz</title>
+
+<link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="static/stotz/stotz.css">
+</link>
+
+<script type="text/javascript">
+function hoverWork(id, hovered)
+{
+    var work = document.getElementById('work-'+id)
+
+    overviewStatus = hovered ? 0 : 1;
+    detailStatus = hovered ? 1 : 0;
+
+    work.getElementsByClassName("image-layer")[0].style.opacity = overviewStatus;
+    work.getElementsByClassName("title-layer")[0].style.opacity = overviewStatus;
+    work.getElementsByClassName("detail-layer")[0].style.opacity = detailStatus;
+}
+
+function listenToImages(id, red, green, blue)
+{
+    var imageA = document.getElementById('work-'+id+"-imageA");
+    var imageB = document.getElementById('work-'+id+"-imageB");
+    var imageC = document.getElementById('work-'+id+"-imageC");
+
+    imageA.addEventListener('load', function() { renderImages(id, red, green, blue) }, false);
+    imageB.addEventListener('load', function() { renderImages(id, red, green, blue) }, false);
+    imageC.addEventListener('load', function() { renderImages(id, red, green, blue) }, false);
+}
+
+function renderImages(id, red, green, blue)
+{
+    var canvas = document.getElementById('work-'+id).getElementsByClassName("images")[0];
+
+    var context = canvas.getContext('2d');
+
+    var imageA = document.getElementById('work-'+id+"-imageA");
+    var imageB = document.getElementById('work-'+id+"-imageB");
+    var imageC = document.getElementById('work-'+id+"-imageC");
+
+    context.drawImage(imageA, 0, 0, 400, 225);
+    context.drawImage(imageB, 400, 0, 400, 225);
+    context.drawImage(imageC, 800, 0, 400, 225);
+
+    var canvasImage = context.getImageData(0, 0, canvas.width, canvas.height);
+
+    var darkR = red;
+    var darkG = green;
+    var darkB = blue;
+
+    function lighten(c)
+    {
+        return Math.round(c + (255-c) * 0.9);
+    }
+
+    var lightR = lighten(red);
+    var lightG = lighten(green);
+    var lightB = lighten(blue);
+
+    function interpolate(p, low, high)
+    {
+        return (high-low) * p + low;
+    }
+
+    for(var i = 0; i < canvas.width * canvas.height * 4; i += 4)
+    {
+        var brightness = (canvasImage.data[i]
+            + canvasImage.data[i+1] * 1.6
+            + canvasImage.data[i+2] * 0.6) / (3.2 * 255);
+
+        canvasImage.data[i] = interpolate(brightness, darkR, lightR);
+        canvasImage.data[i + 1] = interpolate(brightness, darkG, lightG);
+        canvasImage.data[i + 2] = interpolate(brightness, darkB, lightB);
+    }
+
+    context.putImageData(canvasImage, 0, 0);
+}
+
+</script>
+
+</head>
+<body id="works">
+
+<div id="scrolling-content">
+<div id="list">
+
+<a class="block-link" href="work/11.html"
+    onmouseover="hoverWork('11', true)"
+    onmouseleave="hoverWork('11', false)"
+>
+    <img id="work-11-imageA" class="js-image" src="media/Hangar_Topshot_klein.jpg" height=200></img>
+    <img id="work-11-imageB" class="js-image" src="media/Field_Sun_klein.jpg" height=200></img>
+    <img id="work-11-imageC" class="js-image" src="media/Hangar_Dancers_klein.jpg" height=200></img>
+
+    <div class="work-overview" id="work-11" style="background-color: rgb(0, 125, 125);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Field Trip</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Field Trip</h2>
+                <div class="stats">(90 min, Interactive Documentary)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">Field Trip is an open source documentary about an unconventional place: The Tempelhof Field in the heart of Berlin.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Best VR Interactive Documentary</span><br><span class="awarder">Melbourne Documentary Filmfestival</span>
+                
+                    <li><span class="award">Best Documentary</span><br><span class="awarder">Lovie Award Gold</span>
+                
+                    <li><span class="award">People’s Choice Best</span><br><span class="awarder">Lovie Award Gold</span>
+                
+                    <li><span class="award">Medienprofi Förderung</span><br><span class="awarder">Medieninnovationszentrum Babelsberg (MIZ)</span>
+                
+                    <li><span class="award">Funded by</span><br><span class="awarder">Rudolf Augstein Stiftung</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("11", 0, 125, 125);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">90 min</span>
+<span class="year">2019</span>
+<span class="form">Interactive Documentary</span>
+</div>
+
+<div class="images">
+<img src="/media/Hangar_Topshot_klein.jpg" width=100></img>
+<img src="/media/Field_Sun_klein.jpg" width=100></img>
+<img src="/media/Hangar_Dancers_klein.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">Field Trip is an open source documentary about an unconventional place: The Tempelhof Field in the heart of Berlin.</div>
+
+<ul class = "awards">
+<li><b>Melbourne Documentary Filmfestival</b> Best VR Interactive Documentary <i></i>
+
+<li><b>Lovie Award Gold</b> Best Documentary <i></i>
+
+<li><b>Lovie Award Gold</b> People’s Choice Best <i></i>
+
+<li><b>Medieninnovationszentrum Babelsberg (MIZ)</b> Medienprofi Förderung <i></i>
+
+<li><b>Rudolf Augstein Stiftung</b> Funded by <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/12.html"
+    onmouseover="hoverWork('12', true)"
+    onmouseleave="hoverWork('12', false)"
+>
+    <img id="work-12-imageA" class="js-image" src="media/Filmstill_AllByMarseille_CiteRadieuse.jpg" height=200></img>
+    <img id="work-12-imageB" class="js-image" src="media/Filmstill_AllByMarseille_Demonstration_Harbour.jpg" height=200></img>
+    <img id="work-12-imageC" class="js-image" src="media/Filmstill_AllByMarseille_CiteRadieuseSinging.jpg" height=200></img>
+
+    <div class="work-overview" id="work-12" style="background-color: rgb(88, 91, 137);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>All by Marseille / Tout contre Marseille</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>All by Marseille / Tout contre Marseille</h2>
+                <div class="stats">(35 min, Documentary)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">How can we live together in cities as a community?</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Screened at</span><br><span class="awarder">XIII. Istanbul International Architecture and Urban Films Festival</span>
+                
+                    <li><span class="award">Screened at</span><br><span class="awarder">FIDBA - Festival Internacional de Cine Documental de Buenos Aires</span>
+                
+                    <li><span class="award">Screened at</span><br><span class="awarder">Arquiteturas Film Festival Lisboa 2021</span>
+                
+                    <li><span class="award">Screened at</span><br><span class="awarder">Center for Architecture Camp / Praha “Ethnic markets in Prague and Marseille”</span>
+                
+                    <li><span class="award">Screened at</span><br><span class="awarder">La Friche Belle de Mai / Marseille, &quot;Temps for Freiraum”</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("12", 88, 91, 137);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">35 min</span>
+<span class="year">2019</span>
+<span class="form">Documentary</span>
+</div>
+
+<div class="images">
+<img src="/media/Filmstill_AllByMarseille_CiteRadieuse.jpg" width=100></img>
+<img src="/media/Filmstill_AllByMarseille_Demonstration_Harbour.jpg" width=100></img>
+<img src="/media/Filmstill_AllByMarseille_CiteRadieuseSinging.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">How can we live together in cities as a community?</div>
+
+<ul class = "awards">
+<li><b>XIII. Istanbul International Architecture and Urban Films Festival</b> Screened at <i></i>
+
+<li><b>FIDBA - Festival Internacional de Cine Documental de Buenos Aires</b> Screened at <i></i>
+
+<li><b>Arquiteturas Film Festival Lisboa 2021</b> Screened at <i></i>
+
+<li><b>Center for Architecture Camp / Praha “Ethnic markets in Prague and Marseille”</b> Screened at <i></i>
+
+<li><b>La Friche Belle de Mai / Marseille, &quot;Temps for Freiraum”</b> Screened at <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/10.html"
+    onmouseover="hoverWork('10', true)"
+    onmouseleave="hoverWork('10', false)"
+>
+    <img id="work-10-imageA" class="js-image" src="media/Marije_Refugees-ArentyouTired_2.jpg" height=200></img>
+    <img id="work-10-imageB" class="js-image" src="media/Audience-2-light_2.jpg" height=200></img>
+    <img id="work-10-imageC" class="js-image" src="media/Choir-4_2.jpg" height=200></img>
+
+    <div class="work-overview" id="work-10" style="background-color: rgb(0, 125, 130);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Moments of Movement</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Moments of Movement</h2>
+                <div class="stats">(70 min, VJ-Performance with live Music and Tap Dance)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">A cinematic-musical dialogue on world wide movement</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">PERFORMED at</span><br><span class="awarder">PERA MUSEUM ISTANBUL, FUNDED BY GOETHE INSTITUT ISTANBUL AND MINISTRY OF FOREIGN AFFAIRS</span>
+                
+                    <li><span class="award">PERFORMED at</span><br><span class="awarder">Stadthaus Ulm, Funded by Kulturamt Ulm</span>
+                
+                    <li><span class="award">Opening Performance</span><br><span class="awarder">Light Moves Festival Limerick</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("10", 0, 125, 130);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">70 min</span>
+<span class="year">2016</span>
+<span class="form">VJ-Performance with live Music and Tap Dance</span>
+</div>
+
+<div class="images">
+<img src="/media/Marije_Refugees-ArentyouTired_2.jpeg" width=100></img>
+<img src="/media/Audience-2-light_2.jpeg" width=100></img>
+<img src="/media/Choir-4_2.jpeg" width=100></img>
+</div>
+
+<div class="short-synopsis">A cinematic-musical dialogue on world wide movement</div>
+
+<ul class = "awards">
+<li><b>PERA MUSEUM ISTANBUL, FUNDED BY GOETHE INSTITUT ISTANBUL AND MINISTRY OF FOREIGN AFFAIRS</b> PERFORMED at <i>ISTANBUL</i>
+
+<li><b>Stadthaus Ulm, Funded by Kulturamt Ulm</b> PERFORMED at <i>Ulm</i>
+
+<li><b>Light Moves Festival Limerick</b> Opening Performance <i>Limerick, Ireland</i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/3.html"
+    onmouseover="hoverWork('3', true)"
+    onmouseleave="hoverWork('3', false)"
+>
+    <img id="work-3-imageA" class="js-image" src="media/Protest_Utku_M_Barricades_korr.jpg" height=200></img>
+    <img id="work-3-imageB" class="js-image" src="media/2_Protest_Marije_Istiklal.jpg" height=200></img>
+    <img id="work-3-imageC" class="js-image" src="media/Protest_Marije_Street_Night2.jpg" height=200></img>
+
+    <div class="work-overview" id="work-3" style="background-color: rgb(88, 91, 137);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>One Million Steps</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>One Million Steps</h2>
+                <div class="stats">(21 min, Documentary Film &amp; Live Performance)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">A tap dancer lands in the middle of the protests in Istanbul and communicates with the universal language of rhythm.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Best Experimentalfilm</span><br><span class="awarder">26th BAMBERGER KURZFILMTAGE</span>
+                
+                    <li><span class="award">Best Documentary</span><br><span class="awarder">4th MUMBAI SHORTS INT’L FILM FESTIVAL</span>
+                
+                    <li><span class="award">Best Documentary</span><br><span class="awarder">17th FESTIVAL INTERNATIONAL DU FILM D&#39;AUBAGNE (FIFA)</span>
+                
+                    <li><span class="award">Audience Award Best Documentary</span><br><span class="awarder">13th CINEDANS – DANCE ON SCREEN FESTIVAL EYE, AMSTERDAM</span>
+                
+                    <li><span class="award">Juror&#39;s Special Prize</span><br><span class="awarder">3rd GREEN IMAGE FILM FESTIVAL, TOKYO</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("3", 88, 91, 137);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">21 min</span>
+<span class="year">2015</span>
+<span class="form">Documentary Film &amp; Live Performance</span>
+</div>
+
+<div class="images">
+<img src="/media/Protest_Utku_M_Barricades_korr.jpg" width=100></img>
+<img src="/media/2_Protest_Marije_Istiklal.jpeg" width=100></img>
+<img src="/media/Protest_Marije_Street_Night2.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">A tap dancer lands in the middle of the protests in Istanbul and communicates with the universal language of rhythm.</div>
+
+<ul class = "awards">
+<li><b>26th BAMBERGER KURZFILMTAGE</b> Best Experimentalfilm <i>Bamberg</i>
+
+<li><b>4th MUMBAI SHORTS INT’L FILM FESTIVAL</b> Best Documentary <i>Mumbai</i>
+
+<li><b>17th FESTIVAL INTERNATIONAL DU FILM D&#39;AUBAGNE (FIFA)</b> Best Documentary <i>Aubagne, France</i>
+
+<li><b>13th CINEDANS – DANCE ON SCREEN FESTIVAL EYE, AMSTERDAM</b> Audience Award Best Documentary <i>Amsterdam</i>
+
+<li><b>3rd GREEN IMAGE FILM FESTIVAL, TOKYO</b> Juror&#39;s Special Prize <i>Tokyo, Japan</i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/4.html"
+    onmouseover="hoverWork('4', true)"
+    onmouseleave="hoverWork('4', false)"
+>
+    <img id="work-4-imageA" class="js-image" src="media/Driver.jpg" height=200></img>
+    <img id="work-4-imageB" class="js-image" src="media/Kaufi_Wave_Back.jpg" height=200></img>
+    <img id="work-4-imageC" class="js-image" src="media/OfficeTower.jpg" height=200></img>
+
+    <div class="work-overview" id="work-4" style="background-color: rgb(0, 125, 125);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Sollbruchstelle / Devil hides in doubt</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Sollbruchstelle / Devil hides in doubt</h2>
+                <div class="stats">(60 min, Documentary Film)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">A film about the emotional push and pull of work, its demands and absurdities and the struggle for fulfilment.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Advancement Award, German Television Award</span><br><span class="awarder">Deutscher Fernsehpreis</span>
+                
+                    <li><span class="award">Advancement Award</span><br><span class="awarder">32th DUISBURGER FILMWOCHE</span>
+                
+                    <li><span class="award">Prize of the Insurances</span><br><span class="awarder">DOKUMENTART</span>
+                
+                    <li><span class="award">Special Mention</span><br><span class="awarder">39th VISIONS DU RÉEL</span>
+                
+                    <li><span class="award">Nomination Golden Key</span><br><span class="awarder">25th Kassel Documentary &amp; Video Festival</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("4", 0, 125, 125);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">60 min</span>
+<span class="year">2008</span>
+<span class="form">Documentary Film</span>
+</div>
+
+<div class="images">
+<img src="/media/Driver.jpg" width=100></img>
+<img src="/media/Kaufi_Wave_Back.jpg" width=100></img>
+<img src="/media/OfficeTower.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">A film about the emotional push and pull of work, its demands and absurdities and the struggle for fulfilment.</div>
+
+<ul class = "awards">
+<li><b>Deutscher Fernsehpreis</b> Advancement Award, German Television Award <i>Köln</i>
+
+<li><b>32th DUISBURGER FILMWOCHE</b> Advancement Award <i>Duisburg</i>
+
+<li><b>DOKUMENTART</b> Prize of the Insurances <i>Neubrandenburg</i>
+
+<li><b>39th VISIONS DU RÉEL</b> Special Mention <i>Nyon</i>
+
+<li><b>25th Kassel Documentary &amp; Video Festival</b> Nomination Golden Key <i>Kassel</i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/5.html"
+    onmouseover="hoverWork('5', true)"
+    onmouseleave="hoverWork('5', false)"
+>
+    <img id="work-5-imageA" class="js-image" src="media/01_USA_HulaHoop.jpg" height=200></img>
+    <img id="work-5-imageB" class="js-image" src="media/06_TUR_Goereme.jpg" height=200></img>
+    <img id="work-5-imageC" class="js-image" src="media/08_JAP_MichikoStreet.jpg" height=200></img>
+
+    <div class="work-overview" id="work-5" style="background-color: rgb(88, 91, 137);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Global Home</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Global Home</h2>
+                <div class="stats">(92 min, Documentary Film)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">Director Eva Stotz explores a new way of travelling with Couchsurfing and discovers an unexpected benefit of globalisation.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Nomination Maverick Award</span><br><span class="awarder">Woodstock Film Festival Press</span>
+                
+                    <li><span class="award">Wordpremiere</span><br><span class="awarder">South by Southwest</span>
+                
+                    <li><span class="award">Nomination Cosmic Angel</span><br><span class="awarder">COSMIC CINE MÜNCHEN</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">Raindance Festival</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">11th PLANETE DOC WARSAW</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("5", 88, 91, 137);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">92 min</span>
+<span class="year">2012</span>
+<span class="form">Documentary Film</span>
+</div>
+
+<div class="images">
+<img src="/media/01_USA_HulaHoop.jpg" width=100></img>
+<img src="/media/06_TUR_Goereme.jpeg" width=100></img>
+<img src="/media/08_JAP_MichikoStreet.jpeg" width=100></img>
+</div>
+
+<div class="short-synopsis">Director Eva Stotz explores a new way of travelling with Couchsurfing and discovers an unexpected benefit of globalisation.</div>
+
+<ul class = "awards">
+<li><b>Woodstock Film Festival Press</b> Nomination Maverick Award <i>NEW YORK</i>
+
+<li><b>South by Southwest</b> Wordpremiere <i>Austin, TX</i>
+
+<li><b>COSMIC CINE MÜNCHEN</b> Nomination Cosmic Angel <i></i>
+
+<li><b>Raindance Festival</b> Official Selection <i>London</i>
+
+<li><b>11th PLANETE DOC WARSAW</b> Official Selection <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/6.html"
+    onmouseover="hoverWork('6', true)"
+    onmouseleave="hoverWork('6', false)"
+>
+    <img id="work-6-imageA" class="js-image" src="media/1_.jpg" height=200></img>
+    <img id="work-6-imageB" class="js-image" src="media/2_.jpg" height=200></img>
+    <img id="work-6-imageC" class="js-image" src="media/3_.jpg" height=200></img>
+
+    <div class="work-overview" id="work-6" style="background-color: rgb(0, 125, 125);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>L&#39;après-midi</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>L&#39;après-midi</h2>
+                <div class="stats">(10 min, Short Fiction)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">A young woman confronts her inner demons in a surreal landscape.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">1. Price</span><br><span class="awarder">International Video film festival Bochum</span>
+                
+                    <li><span class="award">1. Price young talent contest VIVA</span><br><span class="awarder">VIVA</span>
+                
+                    <li><span class="award">German Youth &amp; Video Award 2002</span><br><span class="awarder">Ministerium für Jungend und Kultur</span>
+                
+                    <li><span class="award">Advancement Award for young artists</span><br><span class="awarder">Stadt Ulm</span>
+                
+                    <li><span class="award">Int&#39;l Competition</span><br><span class="awarder">5th BAYREUTHER FILMFEST “KONTRAST”</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("6", 0, 125, 125);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">10 min</span>
+<span class="year">2001</span>
+<span class="form">Short Fiction</span>
+</div>
+
+<div class="images">
+<img src="/media/1_.jpg" width=100></img>
+<img src="/media/2_.jpg" width=100></img>
+<img src="/media/3_.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">A young woman confronts her inner demons in a surreal landscape.</div>
+
+<ul class = "awards">
+<li><b>International Video film festival Bochum</b> 1. Price <i></i>
+
+<li><b>VIVA</b> 1. Price young talent contest VIVA <i></i>
+
+<li><b>Ministerium für Jungend und Kultur</b> German Youth &amp; Video Award 2002 <i></i>
+
+<li><b>Stadt Ulm</b> Advancement Award for young artists <i></i>
+
+<li><b>5th BAYREUTHER FILMFEST “KONTRAST”</b> Int&#39;l Competition <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/7.html"
+    onmouseover="hoverWork('7', true)"
+    onmouseleave="hoverWork('7', false)"
+>
+    <img id="work-7-imageA" class="js-image" src="media/Mofamann.jpg" height=200></img>
+    <img id="work-7-imageB" class="js-image" src="media/TH_Foto_gSP66bM.jpg" height=200></img>
+    <img id="work-7-imageC" class="js-image" src="media/Zaun_Flieger.jpg" height=200></img>
+
+    <div class="work-overview" id="work-7" style="background-color: rgb(88, 91, 137);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Tempelhof</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Tempelhof</h2>
+                <div class="stats">(16 min, Documentary)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">People at the fence of the airport Tempelhof in Berlin, united in idleness and wanderlust.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">47thh Viennale</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">5th ACHTUNG BERLIN</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">10th FORUM DOC BELOHORIZONTE</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("7", 88, 91, 137);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">16 min</span>
+<span class="year">2004</span>
+<span class="form">Documentary</span>
+</div>
+
+<div class="images">
+<img src="/media/Mofamann.jpg" width=100></img>
+<img src="/media/TH_Foto_gSP66bM.jpg" width=100></img>
+<img src="/media/Zaun_Flieger.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">People at the fence of the airport Tempelhof in Berlin, united in idleness and wanderlust.</div>
+
+<ul class = "awards">
+<li><b>47thh Viennale</b> Official Selection <i></i>
+
+<li><b>5th ACHTUNG BERLIN</b> Official Selection <i></i>
+
+<li><b>10th FORUM DOC BELOHORIZONTE</b> Official Selection <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/8.html"
+    onmouseover="hoverWork('8', true)"
+    onmouseleave="hoverWork('8', false)"
+>
+    <img id="work-8-imageA" class="js-image" src="media/AmFenster.jpg" height=200></img>
+    <img id="work-8-imageB" class="js-image" src="media/Innen_nachts_cover_ohneTxt.jpg" height=200></img>
+    <img id="work-8-imageC" class="js-image" src="media/amTelefon.jpg" height=200></img>
+
+    <div class="work-overview" id="work-8" style="background-color: rgb(0, 125, 125);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Interiour / Night</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Interiour / Night</h2>
+                <div class="stats">(10 min, Short Fiction)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">One night, one nightmare, thirteen takes.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">14th CINEMA TOUS ÉCRAN</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">9th INT&#39;L FILM FESTIVAL BELGRADE</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">EUROPEAN SHORT FILM FESTIVAL Massachusetts</span>
+                
+                    <li><span class="award">Official Selection</span><br><span class="awarder">Portal Film Festival, Atlanta</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("8", 0, 125, 125);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">10 min</span>
+<span class="year">2006</span>
+<span class="form">Short Fiction</span>
+</div>
+
+<div class="images">
+<img src="/media/AmFenster.jpg" width=100></img>
+<img src="/media/Innen_nachts_cover_ohneTxt.jpg" width=100></img>
+<img src="/media/amTelefon.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">One night, one nightmare, thirteen takes.</div>
+
+<ul class = "awards">
+<li><b>14th CINEMA TOUS ÉCRAN</b> Official Selection <i></i>
+
+<li><b>9th INT&#39;L FILM FESTIVAL BELGRADE</b> Official Selection <i></i>
+
+<li><b>EUROPEAN SHORT FILM FESTIVAL Massachusetts</b> Official Selection <i></i>
+
+<li><b>Portal Film Festival, Atlanta</b> Official Selection <i></i>
+
+</ul>
+-->
+
+
+
+<a class="block-link" href="work/9.html"
+    onmouseover="hoverWork('9', true)"
+    onmouseleave="hoverWork('9', false)"
+>
+    <img id="work-9-imageA" class="js-image" src="media/Friedhof_frau_pildner_2.jpg" height=200></img>
+    <img id="work-9-imageB" class="js-image" src="media/Kirche.jpg" height=200></img>
+    <img id="work-9-imageC" class="js-image" src="media/Maenner.jpg" height=200></img>
+
+    <div class="work-overview" id="work-9" style="background-color: rgb(88, 91, 137);">
+        <div class="content">
+            <div class="image-layer">
+                <canvas class="images" width="1200" height="225">
+                </canvas>
+            </div>
+            <div class="title-layer">
+                <h2>Earth in your hand</h2>
+            </div>
+            <div class="detail-layer" style="opacity: 0;">
+                <h2>Earth in your hand</h2>
+                <div class="stats">(52 min, Documentary)</div>
+                <div class="tiny-divider">&mdash;</div>
+                <div class="short-synopsis">How is life for the remaining Germans in a village in Romania after most of the friends and family have emigrated? Summer 2004 is a moment of emotion in Siebenbürgen.</div>
+                <ul class = "awards">
+                
+                    <li><span class="award">Special Mention</span><br><span class="awarder">INT&#39;L FILMFESTIVAL SIBIU</span>
+                
+                    <li><span class="award">Documentary of the month</span><br><span class="awarder">ZITTY BERLIN</span>
+                
+                    <li><span class="award">Diverse Screenings</span><br><span class="awarder">European capital of culture 2007, Sibiu</span>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        listenToImages("9", 88, 91, 137);
+    </script>
+</a>
+
+<!--
+
+<div class="statistics">
+<span class="length">52 min</span>
+<span class="year">2004</span>
+<span class="form">Documentary</span>
+</div>
+
+<div class="images">
+<img src="/media/Friedhof_frau_pildner_2.jpg" width=100></img>
+<img src="/media/Kirche.jpg" width=100></img>
+<img src="/media/Maenner.jpg" width=100></img>
+</div>
+
+<div class="short-synopsis">How is life for the remaining Germans in a village in Romania after most of the friends and family have emigrated? Summer 2004 is a moment of emotion in Siebenbürgen.</div>
+
+<ul class = "awards">
+<li><b>INT&#39;L FILMFESTIVAL SIBIU</b> Special Mention <i></i>
+
+<li><b>ZITTY BERLIN</b> Documentary of the month <i></i>
+
+<li><b>European capital of culture 2007, Sibiu</b> Diverse Screenings <i></i>
+
+</ul>
+-->
+
+
+</div>
+</div>
+
+
+<div id="header">
+<div id="links">
+<a class="navigation" id="left" href="works.html">Films &amp; Events</a>
+<a id="logo" href="index.html"><img src="static/stotz/small_circle_name.png"></img></a>
+<a class="navigation" id="right" href="courses.html">Teaching &amp; Courses</a>
+</div>
+</div>
+
+
+<div id="footer">
+<div id="links">
+<a class="navigation" href="#">Imprint</a>
+<a class="navigation" href="mailto:film@evastotz.com">Contact</a>
+<a class="navigation" href="about.html">About</a>
+</div>
+</div>
+
+
+
+</body>
+
+<!-- Mirrored from www.evastotz.com/works by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Apr 2024 10:33:47 GMT -->
+</html>
+
