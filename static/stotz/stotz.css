@@ -1,0 +1,763 @@
+body
+{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+h1
+{
+    font-size: 35pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 0.2em;
+}
+
+h3
+{
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 200%;
+}
+
+div.page-terminator
+{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 1200px;
+    height: 1px;
+    background-color: black;
+}
+
+p.block
+{
+    text-align: justify;
+    line-height: 150%;
+}
+
+p.large-block
+{
+    text-align: justify;
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 200%;
+    width: 800;
+}
+
+div.divider
+{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 800px;
+    height: 1px;
+    background-color: black;
+}
+
+div.section-repeater
+{
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: black 1px solid;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+    margin-top: 2em;
+}
+
+/*
+body#works h2
+{
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+*/
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+a.navigation
+{
+    font-size: 12pt;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+}
+
+body#about img#eva-circle
+{
+    margin-top: 40px;
+}
+
+body#about div#awards-and-photos
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body#about h2
+{
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+body#about div#menu h3
+{
+    margin-top: 3em;
+}
+
+body#about h4
+{
+    font-size: 8pt;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 0.2em;
+}
+
+body#works div#list
+{
+    width: 100%;
+}
+
+body#work-detail div#statistics
+{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+body#work-detail div#video
+{
+    text-align: center;
+}
+
+body#work-detail h2
+{
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4em;
+    margin-bottom: 0.5em;
+}
+
+body#work-detail p#long-synopsis
+{
+    width: 800;
+    margin-top: 2em;
+}
+
+body#work-detail h3
+{
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+div.two-columns
+{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+body#work-detail h1
+{
+    width: 1200px;
+}
+
+body#course-detail h1
+{
+    width: 1200px;
+}
+
+div.two-columns div
+{
+    width: 390;
+}
+
+body#work-detail div#links-and-team
+{
+    width: 390;
+    margin-bottom: 2em;
+}
+
+body#work-detail div#festivals
+{
+    width: 390;
+    margin-bottom: 2em;
+}
+
+body#work-detail div#team p
+{
+    margin-top: 0;
+}
+
+body#work-detail div#team p#description
+{
+    text-align: justify;
+    line-height: 150%;
+}
+
+ul
+{
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-left: 1.5em;
+}
+
+li
+{
+    margin-bottom: 0.5em;
+    line-height: 200%;
+}
+
+body#work-detail div#quotes
+{
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+p.quote
+{
+    font-size: 25pt;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    width: 800;
+    margin-bottom: 0.5em;
+}
+
+body#work-detail p#events-description
+{
+    width: 800px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+body#work-detail div.event
+{
+    width: 800px;
+}
+
+body#work-detail p.event-description
+{
+    width: 800px;
+    margin-bottom: 3em;
+}
+
+body#course-detail p
+{
+    width: 800px;
+}
+
+body#course-detail div#testimonials
+{
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+body#course-detail h1
+{
+    margin-bottom: 1.5em;
+}
+
+body#course-detail h2
+{
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4em;
+    margin-bottom: 0.5em;
+}
+
+div#contact
+{
+    font-weight: 300;
+    font-size: 25pt;
+    text-align: center;
+    width: 800px;
+    letter-spacing: 0.1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+div#contact a
+{
+    text-decoration: none;
+}
+
+img.js-image
+{
+    display: none;
+}
+
+div#front-page-heading
+{
+    text-align: center;
+}
+
+div#front-page-body
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+a.area-link
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 35px;
+    transition: background-color 0.5s;
+}
+
+a.area-link:hover
+{
+    background-color: #628076;
+}
+
+a.area-link.left
+{
+    text-align: right;
+    align-items: flex-end;
+}
+
+a.area-link.left div
+{
+    margin-right: 50px;
+}
+
+a.area-link.right
+{
+    text-align: left;
+    align-items: flex-start;
+}
+
+a.area-link.right div
+{
+    margin-left: 50px;
+}
+
+/*
+div#front-page-body
+{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+}
+
+div#front-page-body img
+{
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    margin-left: -427;
+    pointer-events: none;
+    height: 856px;
+}
+
+table#front-page-body
+{
+    width: 100%;
+    height: 855px;
+    table-layout: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0px;
+    margin: 0px;
+}
+
+table#front-page-body td
+{
+    text-transform: uppercase;
+    vertical-align: middle;
+    letter-spacing: 10px;
+    font-size: 25px;
+}
+
+table#front-page-body td#left
+{
+    text-align: right;
+    width: 50%;
+    padding: 0px;
+    margin: 0px;
+}
+
+table#front-page-body td#right
+{
+    text-align: left;
+    width: 50%;
+    padding: 0px;
+    margin: 0px;
+}
+
+table#front-page-body td:hover
+{
+    background-color: #c8aa5a;
+}
+
+table#front-page-body td div
+{
+    width: 100%;
+    height: 856;
+    padding: 0px;
+    margin: 0px;
+}
+
+table#front-page-body td h2
+{
+    padding-top: 360px;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+table#front-page-body td#left h2
+{
+    padding-right: 550px;
+}
+
+table#front-page-body td#right h2
+{
+    padding-left: 550px;
+}
+*/
+
+div#front-page-bottom
+{
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top: 1000px;
+    width: 1200px;
+    display: table;
+}
+
+div#front-page-bottom a
+{
+    display: table-cell;
+    width: 2%;
+    text-align: center;
+}
+
+div#footer
+{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+    background-color: white;
+}
+
+div#footer-buffer
+{
+}
+
+div#footer div#links
+{
+    display: table;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+div#footer a
+{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 300px;
+}
+
+div#header
+{
+    position: fixed;
+    top: 0px;
+    height: 90px;
+    left: 0px;
+    right: 0px;
+    display: block;
+    background-color: white;
+}
+
+div#header div#links
+{
+    display: table;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+div#header a
+{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div#header a#left
+{
+    text-align: right;
+    padding-right: 50px;
+    width: 300px;
+}
+
+div#header a#right
+{
+    text-align: left;
+    padding-left: 50px;
+    width: 300px;
+}
+
+div#scrolling-content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+div.work-overview
+{
+    display: flex;
+    width: 100%;
+    height: 225px;
+    justify-content: center;
+}
+
+div.work-overview div.content
+{
+    width: 1200px;
+    height: 225px;
+    text-transform: none;
+}
+
+div.work-overview div.content div.image-layer
+{
+    position: relative;
+    top: 0px;
+    width: 1200px;
+    height: 225px;
+    transition: opacity 0.5s;
+}
+
+div.work-overview div.content div.image-layer canvas.images
+{
+    margin: 0;
+    padding: 0;
+    height: 225px;
+}
+
+div.work-overview div.content div.image-layer img
+{
+    margin: 0;
+    padding: 0;
+    height: 225px;
+}
+
+div.work-overview div.content div.title-layer
+{
+    display: flex;
+    width: 1200px;
+    height: 225px;
+    margin-top: -225px;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+div.work-overview div.content div.detail-layer
+{
+    display: flex;
+    width: 1200px;
+    height: 225px;
+    margin-top: -225px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+div.work-overview div.title-layer h2
+{
+    z-index: 0;
+}
+
+div.work-overview h2
+{
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 13px;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+div.work-overview div.stats
+{
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+div.work-overview div.short-synopsis
+{
+    font-size: 18px;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+div.work-overview ul.awards
+{
+    display: flex;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+div.work-overview ul.awards li
+{
+    list-style-type: none;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 160px;
+    line-height: 120%;
+}
+
+body#courses div#list
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.course-overview
+{
+    width: 1200px;
+    height: 150px;
+    margin-bottom: 25px;
+}
+
+div.course-overview h3
+{
+    margin-top: 1.5em;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+div.course-overview h2
+{
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.1em;
+    line-height: 140%;
+    font-size: 30px;
+    letter-spacing: 13px;
+    margin: 0;
+    font-weight: 400;
+}
+
+div.course-overview div.title-layer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1200px;
+    height: 150px;
+    border-width: 4px;
+    border-style: solid;
+    background-color: white;
+    margin-top: -158px;
+    transition: opacity 0.5s;
+}
+
+div.course-overview div.title-layer h3
+{
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+body#courses a.block-link:hover div.title-layer
+{
+    opacity: 0;
+}
+
+body#courses div#vision
+{
+    font-size: 22pt;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    line-height: 130%;
+    text-align: center;
+    margin: 3em;
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+body#courses div#vision h3
+{
+    text-align: center;
+}
+
+div.course-overview div.detail-layer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1200px;
+    height: 150px;
+    color: white;
+    border-width: 4px;
+    border-style: solid;
+}
+
+div.course-overview div.detail-layer h3
+{
+    margin-top: 0em;
+}
+
+div.course-overview div.detail-layer div.description
+{
+    text-align: center;
+    width: 700px;
+    line-height: 180%;
+    margin-top: 0.5em;
+}
+
+a.block-link
+{
+    text-decoration: none;
+    color: inherit;
+}
+
